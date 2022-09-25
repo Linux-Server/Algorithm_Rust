@@ -7,7 +7,6 @@ fn main(){
 }
 
 
-#[allow(unused_variables)]
 fn binary_search(list:&Vec<i32>, target:&i32)-> Option<i32>{
     let target = *target;
     //Define index of first and last 
@@ -16,8 +15,9 @@ fn binary_search(list:&Vec<i32>, target:&i32)-> Option<i32>{
     let mut first = 0;
     let mut last = list.len() - 1;
 
-    for (index,val) in list.iter().enumerate(){
-        let midpoint = (first+last)/2;
+    while first<=last {        
+    
+     let midpoint = (first+last)/2;
         if list[midpoint] == target{
             return Some(midpoint as i32);
         }
